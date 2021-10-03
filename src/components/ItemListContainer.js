@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ItemCount from './ItemCount.js'
+import ItemList from './ItemList.js'
 const ItemListContainer = (props) =>{
     let [marca, setMarca] = useState(props.marca)
     let styles = {
@@ -12,7 +12,7 @@ const ItemListContainer = (props) =>{
                 {marca}
             </h1>
             <h3>Diseños novedosos de lámparas led e iluminarias💡</h3>
-            <ItemCount stock = '12' initial = '1'/>
+            < ItemList />
         </div>
     )
 }
