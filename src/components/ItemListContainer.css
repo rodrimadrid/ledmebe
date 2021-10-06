@@ -1,0 +1,8 @@
+.products{
+    display: flex;
+}
+.productsBtn{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

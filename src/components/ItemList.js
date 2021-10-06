@@ -1,37 +1,23 @@
 import React from 'react';
-import Products from './Item.js';
-import ItemCount from './ItemCount.js';
-import { Card } from 'react-bootstrap';
-
-const ItemList = ()=>{
-
-const getItem =  new Promise((resolve, reject)=>{
-                    setTimeout(() => {
-                        resolve(Products)
-                    }, 2000);
-                  });
+import Item from './Item.js';
 
 
-getItem.then(response =>{ 
-    console.log('lista : ' + Products.map( i => i.name))
 
-})
+const ItemList = ({products})=>{
+console.log(products )
+
 return (
-  <>
-    {Products.map( item => 
-    <Card key= {item.id} style={{ width: "18rem" }}>
-      <Card.Img variant="top" src= {item.img} />
-      <Card.Body>
-        <Card.Title>{item.name}</Card.Title>
-        <Card.Text>
-        {item.luz}
-        </Card.Text>
-        <ItemCount stock=  {item.stock} initial= "1" />
-      </Card.Body>
-    </Card>
-    
-    )}
-  </>
-);
+   <div>
+        {products.map(item => {
+            return <Item key = {item.id}
+                         id= {item.id}
+                         name = {item.name}
+                         price = {item.price}
+                         img = {item.img}/>
+        })}
+   </div>
+) 
 }
 export default ItemList
+
+
