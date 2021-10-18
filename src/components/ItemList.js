@@ -7,14 +7,18 @@ const ItemList = ({products})=>{
 console.log(products )
 
 return (
-   <div>
-        {products.map(item => {
-            return <Item key = {item.id}
-                         id= {item.id}
-                         name = {item.name}
-                         price = {item.price}
-                         img = {item.img}/>
-        })}
+   <div className= 'detail-products'>
+        {products ?
+            products.map(item => {
+                  return <Item key = {item.id}
+                              id= {item.id}
+                              name = {item.name}
+                              price = {item.price}
+                              img = {item.img}/>
+            }): (
+            <h2>Cargando...</h2>
+            )
+         }
    </div>
 ) 
 }

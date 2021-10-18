@@ -1,33 +1,37 @@
 import React, { useState, useEffect } from 'react'
 import ItemList from './ItemList.js'
-import ItemDetailContainer from "./ItemDetailContainer.js";
 import './ItemListContainer.css'
+import Products from '../Productos.json'
+import { useParams } from "react-router-dom"
 
 const ItemListContainer = (props) =>{
     let [marca, setMarca] = useState(props.marca)
     let [products, setProducts] = useState([])
+    const { id: idCategory } = useParams();
     let styles = {
         color : '#7D2181',
         fontSize : '2em'
     }
-    const Products = [
-    {"id": 1, "name": "Eclipse", "price": 7000, "luz": "Cálida", "control": "dimmer", "stock": 3, "img": "../src/components/assets/corner.jpeg"},
-    {"id": 2, "name": "Quadro", "price": 8000, "luz": "Cálida", "control": "dimmer", "stock": 4, "img": "../src/components/assets/corner.jpeg"},
-    {"id": 3, "name": "Corner", "price": 8000, "luz": "RGB", "control": "wifi", "stock": 6, "img": "../src/components/assets/corner.jpeg"},
-    {"id": 4, "name": "Cleo", "price": 8000, "luz": "Fria", "control": "dimmer", "stock": 4, "img": "../src/components/assets/corner.jpeg"},
-    {"id": 5, "name": "Triangulo", "price": 8000, "luz": "Cálida", "control": "dimmer", "stock": 7, "img": "../src/components/assets/corner.jpeg"}
-]
+    console.log(idCategory + 'item')
   useEffect(() => {
-    
+      
         const getProducts = new Promise((resolve, reject)=>{
+            let productsList 
+            if(idCategory){
+                productsList = Products.filter(e => e.luz.toLowerCase() === idCategory)
+            }else{
+                productsList = Products
+            }
+            
+            console.log(productsList)
             setTimeout(() => {
-                resolve(Products)
+                resolve(productsList)
             }, 2000);
         })
    getProducts.then((result) => {
       setProducts(result) 
    })
-}, [])
+}, [idCategory])
    
     return( 
         <div > 
@@ -38,7 +42,6 @@ const ItemListContainer = (props) =>{
             <h4>lista de productos</h4>
             <div className = 'products'>
                 <ItemList products = {products}/>
-                <ItemDetailContainer itemsDetail = {Products}/>
             </div>
         </div>
     )

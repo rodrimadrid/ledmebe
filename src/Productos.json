@@ -1,0 +1,7 @@
+[
+    {"id": 1, "name": "Eclipse", "price": 7000, "luz": "Calida", "control": "dimmer", "stock": 3, "img": "./assets/corner.jpg"},
+    {"id": 2, "name": "Quadro", "price": 9000, "luz": "Calida", "control": "dimmer", "stock": 4, "img": "./assets/corner.jpg"},
+    {"id": 3, "name": "Corner", "price": 8000, "luz": "RGB", "control": "wifi", "stock": 6, "img": "./assets/corner.jpg"},
+    {"id": 4, "name": "Cleo", "price": 7000, "luz": "RGB", "control": "wifi", "stock": 4, "img": "./assets/led.jpeg"},
+    {"id": 5, "name": "Triangulo", "price": 6000, "luz": "Calida", "control": "dimmer", "stock": 7, "img": "./assets/led.jpeg"}
+]

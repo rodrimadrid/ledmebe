@@ -1,40 +1,40 @@
-import React, { useState, useEffect } from 'react'
-import ItemDetail from './ItemDetail.js'
-import './ItemListContainer.css'
+import React, { useState, useEffect } from 'react';
+import ItemDetail from './ItemDetail.js';
+import './ItemListContainer.css';
+import Products from '../Productos.json';
+import { useParams } from 'react-router-dom';
+import { Spinner } from 'react-bootstrap';
 
-const ItemDetailContainer = ({itemsDetail})=>{
-    let [detail, setDetail] = useState([]);
+const ItemDetailContainer = () => {
+  let [detail, setDetail] = useState([]);
+  const { id: idProduct } = useParams();
+  useEffect(() => {
+    const getItem = new Promise((resolve, reject) => {
+      const buscarProducto = Products.find(
+        (element) => element.id === parseInt(idProduct)
+      );
+      setTimeout(() => {
+        resolve(buscarProducto);
+        console.log(buscarProducto);
+      }, 2000);
+    });
+    getItem.then((result) => {
+      setDetail(result);
+    });
+  }, [idProduct]);
 
-
-    useEffect(() => {
-        const getItem = new Promise((resolve, reject)=>{
-            setTimeout(() => {
-                resolve(itemsDetail)
-            }, 2000);
-        })
-        getItem.then((result) => {
-          setDetail(result)  
-          console.log(detail)
-        })
-        
-    }, [])
-    
-    return (
-        <div className = 'productsBtn'>
-
-           {detail.map(item => {
-                     return  <ItemDetail 
-                                key = {item.id + 0.1}
-                                img = {item.img}   
-                                name= {item.name}
-                                price = {item.price}
-                                stock = {item.stock}
-                                luz = {item.luz}
-                                control = {item.control}
-                             />
-        })}
-            
-        </div>
-    )
-}
-export default ItemDetailContainer
+  return (
+    <div >
+      {detail.stock && <ItemDetail detail={detail} />}
+      {detail.stock === undefined && (
+        <Spinner
+          className="spinner"
+          animation="border"
+          variant="secondary"
+       
+        />
+      )}
+    </div>
+  );
+};
+export default ItemDetailContainer;
