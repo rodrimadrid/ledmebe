@@ -1,16 +1,14 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-
 import {Navbar, Container, Nav, NavDropdown} from 'react-bootstrap'
 import { NavLink } from 'react-router-dom';
 import CartWidget from './CartWidget.js'
-
+import Logo from './assets/Logo.jpg'
 function NavBar() {
   return (
       <Navbar bg="light" expand="lg">
         <Container>
           <Navbar.Brand>
-            <NavLink to='/'>Led Me Be</NavLink>
+            <NavLink to='/'><img className = 'logo' src={Logo}/></NavLink>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

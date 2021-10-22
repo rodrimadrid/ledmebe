@@ -18,14 +18,15 @@ const ItemDetail = ({ detail }) => {
       setStock(stock - count);
       setCount(0);
       addToCart(detail, cantidad)
-      console.log(cantidad)
+      setCantidad(0)
+     
 
     } else {
       setCantidad(cantidad += count)
       setStock(stock - count);
       setCount(1);
       addToCart(detail, cantidad)
-      console.log(cantidad)
+       setCantidad(0)
     }
   };
   let handleMas = () => {

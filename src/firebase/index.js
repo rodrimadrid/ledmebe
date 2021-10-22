@@ -1,5 +1,5 @@
-import * as firebase from "firebase/app";
-import "firebase/firestore";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
 const app = firebase.initializeApp(
      {
   apiKey: "AIzaSyD_AD7naKgQmyj7cnwx8Z7xU4mORCS3REA",
@@ -9,8 +9,7 @@ const app = firebase.initializeApp(
   messagingSenderId: "772127648473",
   appId: "1:772127648473:web:41d89207dfa2f07977acc8",
   measurementId: "G-FS571ZSSXX"
-};
-
+}
 );
 
 

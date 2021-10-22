@@ -1,7 +1,7 @@
 [
-    {"id": 1, "name": "Eclipse", "price": 7000, "luz": "Calida", "control": "dimmer", "stock": 3, "img": "./assets/corner.jpg"},
-    {"id": 2, "name": "Quadro", "price": 9000, "luz": "Calida", "control": "dimmer", "stock": 4, "img": "./assets/corner.jpg"},
-    {"id": 3, "name": "Corner", "price": 8000, "luz": "RGB", "control": "wifi", "stock": 6, "img": "./assets/corner.jpg"},
-    {"id": 4, "name": "Cleo", "price": 7000, "luz": "RGB", "control": "wifi", "stock": 4, "img": "./assets/led.jpeg"},
-    {"id": 5, "name": "Triangulo", "price": 6000, "luz": "Calida", "control": "dimmer", "stock": 7, "img": "./assets/led.jpeg"}
+    {"id": 1, "name": "Eclipse", "price": 7000, "luz": "Calida", "control": "dimmer", "stock": 3, "img": "https://sp-ao.shortpixel.ai/client/to_avif,q_glossy,ret_img,w_455,h_282/https://www.barcelonaled.com/img/cms/LAMPARA%20JAULA%202%20-%20copia_1.jpg"},
+    {"id": 2, "name": "Quadro", "price": 9000, "luz": "Calida", "control": "dimmer", "stock": 4, "img": "https://lightingspain.com/blog/wp-content/uploads/2020/03/lampara-negra-lampara-perchero-para-pared-han-faro.jpg"},
+    {"id": 3, "name": "Corner", "price": 8000, "luz": "RGB", "control": "wifi", "stock": 6, "img": "https://lightingspain.com/wp/wp-content/uploads/2020/03/aplique-negro-lampara-de-pared-aura-luzfin.jpg"},
+    {"id": 4, "name": "Cleo", "price": 7000, "luz": "RGB", "control": "wifi", "stock": 4, "img": "https://lightingspain.com/wp/wp-content/uploads/2020/03/kasteli-lampara-de-techo-negra-colgante-moderna-idp-lampshades.jpg"},
+    {"id": 5, "name": "Triangulo", "price": 6000, "luz": "Calida", "control": "dimmer", "stock": 7, "img": "https://lightingspain.com/wp/wp-content/uploads/2020/03/lampara-clasica-de-mesa-negra-de-cristal-copenlamp.jpg"}
 ]
