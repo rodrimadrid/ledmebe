@@ -17,7 +17,7 @@ useEffect(() => {
     const db = getFirestore();
     const itemCollection = db.collection("Productos");
     if (idCategory) {
-      const itemsList = itemCollection.where("luz", "==", idCategory)
+      const itemsList = itemCollection.where("luz".toLocaleLowerCase(), "==", idCategory)
       itemsList.get().then((querySnapshot) => {
       if(querySnapshot.size === 0) {
         console.log("No Hay resultados");
@@ -58,7 +58,7 @@ useEffect(() => {
    getitems.then((result) => {
       setItems(result) 
    }) */
-   console.log(items)
+ 
 }, [idCategory])
    
     return( 

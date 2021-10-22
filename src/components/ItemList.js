@@ -3,12 +3,12 @@ import Item from './Item.js';
 import { Spinner } from 'react-bootstrap';
 
 
-const ItemList = ({products})=>{
-console.log(products)
+const ItemList = ({items})=>{
+console.log(items)
 return (
    <div className= 'detail-products'>
-        { products ?
-            products.map(item => {
+        { items ?
+            items.map(item => {
                   return <Item key = {item.id}
                               id= {item.id}
                               name = {item.name}
