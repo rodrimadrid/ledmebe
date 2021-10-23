@@ -17,7 +17,7 @@ useEffect(() => {
     const db = getFirestore();
     const itemCollection = db.collection("Productos");
     if (idCategory) {
-      const itemsList = itemCollection.where("luz".toLocaleLowerCase(), "==", idCategory)
+      const itemsList = itemCollection.where("luz", "==", idCategory)
       itemsList.get().then((querySnapshot) => {
       if(querySnapshot.size === 0) {
         console.log("No Hay resultados");
@@ -31,7 +31,7 @@ useEffect(() => {
       })
     }else{
         console.log(items)
-/*       itemCollection.get().then((querySnapshot) => {
+      itemCollection.get().then((querySnapshot) => {
         if(querySnapshot.size === 0) {
           console.log("No Hay resultados");
         }
@@ -40,24 +40,9 @@ useEffect(() => {
           }));        
       }).catch((error) => {
         console.log("Error al traer los items", error);
-      }) */
+      }) 
     }
-       /*  const getitems = new Promise((resolve, reject)=>{
-            let itemsList 
-            if(idCategory){
-                itemsList = items.filter(e => e.luz.toLowerCase() === idCategory)
-            }else{
-                itemsList = items
-            }
-            
-            console.log(itemsList)
-            setTimeout(() => {
-                resolve(itemsList)
-            }, 2000);
-        })
-   getitems.then((result) => {
-      setItems(result) 
-   }) */
+      
  
 }, [idCategory])
    

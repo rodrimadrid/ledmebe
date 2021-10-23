@@ -21,10 +21,10 @@ function NavBar() {
               </Nav.Link>                                
               <NavDropdown title="Categorias" id="basic-nav-dropdown">
               <NavDropdown.Item>
-               <NavLink to='/category/rgb'>RGB</NavLink>
+               <NavLink to='/category/RGB'>RGB</NavLink>
               </NavDropdown.Item>     
               <NavDropdown.Item>
-               <NavLink to='/category/calida'>Cálidas</NavLink>
+               <NavLink to='/category/Cálida'>Cálidas</NavLink>
               </NavDropdown.Item>     
                 <NavDropdown.Divider />
                 <NavDropdown.Item>

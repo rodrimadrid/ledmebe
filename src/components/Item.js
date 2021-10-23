@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import "./item.css"
-const Item = ({id, name, price, img, stock, luz})=>{
+const Item = ({id, name, price, img})=>{
  
   return (
     <> 
