@@ -1,48 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import ItemDetail from './ItemDetail.js';
-import './ItemListContainer.css';
 import { getFirestore } from '../firebase'
+import ItemDetail from './ItemDetail.js';
 import { useParams } from 'react-router-dom';
+import './ItemListContainer.css';
 import { Spinner } from 'react-bootstrap';
+
 
 const ItemDetailContainer = () => {
   let [detail, setDetail] = useState([]);
   const { id: idProduct } = useParams();
+  console.log(idProduct)
   useEffect(() => {
-    const db = getFirestore();
-    const itemCollection = db.collection("Productos");
-    const itemsDetailList = itemCollection.where("id", "==", idProduct )
-    itemsDetailList.get().then((querySnapshot) => {
-    if(querySnapshot.size === 0) {
-      console.log("No Hay resultados");
-      console.log(itemsDetailList)
-      }
-      setDetail(querySnapshot.docs.map(doc => {
-        return{id: doc.id, ...doc.data()} 
-        }));
-    }).catch((error) => {
-      console.log("Error al traer los items", error);
-    })
-    console.log(detail)
+      const db = getFirestore();
+     const itemCollection = db.collection("Productos");
+    const itemDetail = itemCollection.doc(idProduct)
+  itemDetail.get().then((data) => {
+     if(data.size === 0) {
+        console.log("No Hay resultados");
+        }
+        setDetail(data.data());
+       
+      }).catch((error) => {
+        console.log("Error al traer los items", error);
+      })
 
-    /* const getItem = new Promise((resolve, reject) => {
-      const buscarProducto = Products.find(
-        (element) => element.id === parseInt(idProduct)
-      );
-      setTimeout(() => {
-        resolve(buscarProducto);
-        console.log(buscarProducto);
-      }, 2000);
-    });
-    getItem.then((result) => {
-      setDetail(result);
-    }); */
   }, [idProduct]);
 
   return (
     <div >
       {detail.stock && <ItemDetail detail={detail} />}
-      {detail.stock === undefined && (
+      {!detail.stock && (
         <Spinner
           className="spinner"
           animation="border"

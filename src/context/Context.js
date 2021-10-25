@@ -5,20 +5,22 @@ const CartContext = ({ children }) => {
   const [cart, setCart] = useState([]);
   let [quantyItems, setQuantyItems] = useState(0);
   const addToCart = (item, cantidad) => {
-    let newItem = cart.find((product) => product.id === item.id);
+    console.log(item)
+    let newItem = cart.find((product) => product.name === item.name);
     if (!newItem) {
       setCart([...cart, { ...item, quantity: cantidad }]);
-
+ console.log(cart)
       setQuantyItems(quantyItems + cantidad);
     } else {
       cart.map((item) =>
         item.id === newItem.id ? { ...(item.quantity += cantidad) } : item
       );
       setQuantyItems(quantyItems + cantidad);
+      console.log(cart)
     }
   };
   const deleteItem = (item) => {
-    let newCart = cart.filter((e) => e.id !== item.id);
+    let newCart = cart.filter((e) => e.name !== item.name);
     setCart(newCart);
     setQuantyItems(quantyItems - item.quantity);
   };

@@ -79,11 +79,10 @@ const App = () => {
                 </Route>
                 <Route exact path = '/category/:id'>
                 <ItemListContainer
-                  
                    products = {products}/>
                 </Route>
                 <Route exact path = '/item/:id'>
-                  <ItemDetailContainer/>
+                 <ItemDetailContainer/>
                 </Route>
                 <Route exact path = '/cart'>
                   <Cart />

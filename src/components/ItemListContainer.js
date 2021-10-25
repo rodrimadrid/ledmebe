@@ -31,7 +31,7 @@ useEffect(() => {
       })
     }else{
         console.log(items)
-      itemCollection.get().then((querySnapshot) => {
+/*       itemCollection.get().then((querySnapshot) => {
         if(querySnapshot.size === 0) {
           console.log("No Hay resultados");
         }
@@ -40,10 +40,9 @@ useEffect(() => {
           }));        
       }).catch((error) => {
         console.log("Error al traer los items", error);
-      }) 
+      }) */
     }
-      
- 
+   console.log(items)
 }, [idCategory])
    
     return( 
