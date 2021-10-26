@@ -1,41 +1,41 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
-
+import React from 'react';
+import {Navbar, Container, Nav, NavDropdown} from 'react-bootstrap'
+import { NavLink } from 'react-router-dom';
+import CartWidget from './CartWidget.js'
+import Logo from './assets/Logo.jpg'
 function NavBar() {
   return (
-    <div className="NavBar">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Led Me Be</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Lights
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-    </div>
+      <Navbar bg="light" expand="lg">
+        <Container>
+          <Navbar.Brand>
+            <NavLink to='/'><img className = 'logo' src={Logo}/></NavLink>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link>
+               <NavLink to='/'>Inicio</NavLink>
+              </Nav.Link>                          
+              <Nav.Link>
+               <NavLink to='/galery'>Galeria</NavLink>
+              </Nav.Link>                                
+              <NavDropdown title="Categorias" id="basic-nav-dropdown">
+              <NavDropdown.Item>
+               <NavLink to='/category/RGB'>RGB</NavLink>
+              </NavDropdown.Item>     
+              <NavDropdown.Item>
+               <NavLink to='/category/Cálida'>Cálidas</NavLink>
+              </NavDropdown.Item>     
+                <NavDropdown.Divider />
+                <NavDropdown.Item>
+               <NavLink to='/cart'>Cart</NavLink>
+              </NavDropdown.Item>     
+              </NavDropdown>
+              <CartWidget />
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
   );
 }
 export default NavBar;
