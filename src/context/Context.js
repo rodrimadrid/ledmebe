@@ -7,13 +7,13 @@ const CartContext = ({ children }) => {
 
 
   const addToCart = (item, count) => {
-    let newItem = cart.find((product) => product.name === item.name);
+    let newItem = cart.find((product) => product.id === item.id);
     if (!newItem) {
       setCart([...cart, { ...item, quantity: count }]);
       setQuantyItems(quantyItems + count);
     } else {
       cart.map((item) =>
-        item.name === newItem.name ? { ...(item.quantity += count) } : item
+        item.id === newItem.id ? { ...(item.quantity += count) } : item
       );
       setQuantyItems(quantyItems + count);    
     }
@@ -21,10 +21,10 @@ const CartContext = ({ children }) => {
   const deleteItem = (item) => {
       console.log(item.quantity)
     setQuantyItems(quantyItems - item.quantity);
-    let newCart = cart.filter((e) => e.name !== item.name);
+    let newCart = cart.filter((e) => e.id !== item.id);
     setCart(newCart);    
   };
-  const price = ()=>{
+  const totalPrice = ()=>{
     let total = 0
     if (cart.length !== 0) {
       cart.forEach(item => {
@@ -44,7 +44,7 @@ const CartContext = ({ children }) => {
                addToCart, 
                deleteItem, 
                quantyItems,
-               price }}
+               totalPrice }}
     >
       {children}
     </CartCntxt.Provider>

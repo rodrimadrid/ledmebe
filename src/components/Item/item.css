@@ -1,0 +1,13 @@
+.item-link{
+    text-decoration: none;
+    color: black;
+}
+button.item-link:hover{
+    color: white;
+}
+.left-arrow{
+    text-align: left;
+}
+.img-size{
+    height: 15em;
+}

@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { getFirestore } from './firebase'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import CartContext from "./context/Context.js";
-import NavBar from './components/Navbar.js';
-import ItemListContainer from './components/ItemListContainer.js';
-import ItemDetailContainer from './components/ItemDetailContainer.js';
-import Cart from './components/Cart.js' 
+import NavBar from './components/NavBar/Navbar.js';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer.js';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.js';
+import Cart from './components/Cart/Cart.js' 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -32,7 +32,7 @@ const App = () => {
         setLoading(false);
       })
     }, []);
-      console.log(products)
+      
     return (
     <>
       <div>{loading && <p>Cargando Informacion...</p>}</div>

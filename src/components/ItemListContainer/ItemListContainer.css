@@ -1,0 +1,20 @@
+.products{
+    display: flex;
+}
+.productsBtn{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.detail-products{
+    width: 100%;
+    margin: 3em;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: space-around;
+}
+.header{
+    background-image: url('../assets/sillon.jpg')
+}
