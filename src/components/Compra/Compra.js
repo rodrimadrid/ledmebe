@@ -21,17 +21,19 @@ const Compra = () => {
         localidad: '',
         telefono: ''
     })
+    const order = []
     for (const item of cart) {
-        console.log(item)
+        let {control, img, luz, stock, ...res} = item
+        const itemToBuy = res
+        order.push(itemToBuy)
     }
-   
+
     const db = getFirestore();
     const compra = db.collection("compra");
-    
 
     const newCompra = {
         buyer: buyerInfo,
-        items: cart,
+        items: order,
         date: firebase.firestore.Timestamp.fromDate(new Date()),
         total: totalPrice()
     }
@@ -45,7 +47,6 @@ const Compra = () => {
                 ...buyerInfo,
                 [e.target.name] : e.target.value
             })
-
         }
     const handleBuy = ()=>{
         //creo documento "compra"
