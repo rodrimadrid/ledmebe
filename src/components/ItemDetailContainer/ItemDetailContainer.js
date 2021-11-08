@@ -8,7 +8,7 @@ import './itemDetailContainer.css'
 const ItemDetailContainer = () => {
   let [detail, setDetail] = useState([]);
   const { id: idProduct } = useParams();
-  console.log(idProduct)
+  
   useEffect(() => {
       const db = getFirestore();
      const itemCollection = db.collection("Productos");
@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
         console.log("No Hay resultados");
         }
         setDetail({...data.data(), id: idProduct});
-       console.log(detail)
+      
       }).catch((error) => {
         console.log("Error al traer los items", error);
       })

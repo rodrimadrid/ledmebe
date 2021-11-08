@@ -2,14 +2,14 @@ import React, { useState, useContext, useEffect } from 'react';
 import firebase from 'firebase/compat/app';
 import { getFirestore } from '../../firebase'
 import { CartCntxt } from '../../context/Context.js'
-import { createOrder, scrollear } from "../../firebase/functions.js"
+import { createOrder, updateStock, scrollear } from "../../firebase/functions.js"
 import BuyerForm from '../BuyerForm/BuyerForm'
 import Alert from 'react-bootstrap/Alert'
 import './Compra.css'
  
 const Compra = () => {
     
-    const { cart, totalPrice } = useContext(CartCntxt);
+    const { cart, setCart, totalPrice } = useContext(CartCntxt);
     const [ alert, setAlert ] = useState()
     const [ message, setMessage ] = useState('')
     const [ compraID, setCompraID ] = useState()
@@ -21,7 +21,10 @@ const Compra = () => {
         localidad: '',
         telefono: ''
     })
+
     const order = []
+    const outOfStock = []
+
     for (const item of cart) {
         let {control, img, luz, stock, ...res} = item
         const itemToBuy = res
@@ -29,7 +32,10 @@ const Compra = () => {
     }
 
     const db = getFirestore();
+    const batch = db.batch();
     const compra = db.collection("compra");
+    const itemsToUpdate = db.collection("Productos")
+
 
     const newCompra = {
         buyer: buyerInfo,
@@ -42,6 +48,7 @@ const Compra = () => {
         setAlert(boolean)
         setMessage(message)
     }
+
     const handleChange = (e)=>{
         setBuyerInfo({
                 ...buyerInfo,
@@ -52,7 +59,10 @@ const Compra = () => {
         //creo documento "compra"
         createOrder(compra, newCompra, setCompraID) 
         //actualizo el stock del documento
-
+        updateStock(itemsToUpdate, order, batch, outOfStock)
+        //limpio el cart 
+        setCart([])
+    
     }
     useEffect(() => {
         if (!alert && compraID) {
