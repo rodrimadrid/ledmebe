@@ -1,5 +1,5 @@
 import React from 'react'
-import CartWidget from '../CartWidget/CartWidget'
+import { Button } from 'react-bootstrap'
 import './ItemCount.css';
 const ItemCount = ({ handleMas, handleMenos, handleOnAdd, stock, count}) => {
 
@@ -7,17 +7,16 @@ const ItemCount = ({ handleMas, handleMenos, handleOnAdd, stock, count}) => {
         <>
             <div>
                 <span>Stock: <strong>{stock}</strong></span>
-                <button className = 'btn btn-danger m-2'onClick = {handleMenos}>-</button>
+                <Button  variant="outline-secondary m-2"onClick = {handleMenos}>-</Button>
                  {count}
-                <button className = 'btn btn-success m-2' onClick = {handleMas}>+</button>
+                <Button  variant="outline-secondary m-2" onClick = {handleMas}>+</Button>
             </div>
             <div>
-                <button 
-                    className = 'btn btn-primary'
+                <Button 
+                    variant="outline-warning m-3"
                     onClick = {handleOnAdd}>
                     Agregar al carrito
-                </button>
-                <CartWidget />
+                </Button>
             </div>
         </>
     )

@@ -12,10 +12,10 @@ const ItemListContainer = ({ products }) =>{
         color : '#7D2181',
         fontSize : '2em'
     }
-
-useEffect(() => {
     const db = getFirestore();
     const itemCollection = db.collection("Productos");
+useEffect(() => {
+
     if (idCategory) {
       const itemsList = itemCollection.where("luz", "==", idCategory)
       itemsList.get().then((querySnapshot) => {
@@ -41,7 +41,6 @@ useEffect(() => {
         console.log("Error al traer los items", error);
       }) 
     }
-
 }, [idCategory])
    
     return( 

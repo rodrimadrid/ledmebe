@@ -2,9 +2,11 @@
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+    justify-content: center;
 }
 .cart-widget{
     margin: 0;
+    width: 30px;
     background-color: red;
     color: white;
     padding: 0.6em;

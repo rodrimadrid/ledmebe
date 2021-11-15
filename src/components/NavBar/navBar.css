@@ -1,6 +1,5 @@
-link{
-    color: black;
-}
-link:hover{
-    color: violet;
-}
+.logo{
+    border-radius: 50%;
+    height: 3.5em;
+    width: 3.5em;
+  }

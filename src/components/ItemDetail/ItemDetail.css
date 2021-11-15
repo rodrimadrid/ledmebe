@@ -2,3 +2,25 @@
     text-decoration: none;
     color: white; 
 }
+.itemDetail-container{
+    display: flex;
+}
+.detail-img{
+    width: 30em;
+    height: 30em;
+}
+.left-arrow{
+    margin: 1em;
+}
+.itemDetail-title{
+    margin: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 8em;
+}
+.detail-line{
+    width: 150%;
+    height: 1.5px;
+    color: rgb(255, 166, 0);
+}
