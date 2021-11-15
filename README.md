@@ -17,7 +17,7 @@
 
 ## Para disponer del código del proyecto en tu computadora:
 
- ✔️Ir al repositorio  [Led me Be](https://react-icons.github.io/react-icons/)
+ ✔️Ir al repositorio  [Led me Be](https://github.com/rodrimadrid/ledmebe)
  <br>
  ✔️Darle click al botón de forkear
  <br>
