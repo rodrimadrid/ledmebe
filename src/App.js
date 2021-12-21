@@ -43,6 +43,9 @@ const App = () => {
             <div className="App">
               <NavBar />
               <Switch>
+                <Route exact path={'/ledmebe'}> 
+                  <Inicio />
+                </Route>
                 <Route exact path = '/'>
                   <Inicio />
                 </Route>
