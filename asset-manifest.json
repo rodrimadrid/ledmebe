@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ledmebe/static/css/main.a8a92648.chunk.css",
-    "main.js": "/ledmebe/static/js/main.410a1a9d.chunk.js",
-    "main.js.map": "/ledmebe/static/js/main.410a1a9d.chunk.js.map",
+    "main.js": "/ledmebe/static/js/main.428d340d.chunk.js",
+    "main.js.map": "/ledmebe/static/js/main.428d340d.chunk.js.map",
     "runtime-main.js": "/ledmebe/static/js/runtime-main.cc75d0cd.js",
     "runtime-main.js.map": "/ledmebe/static/js/runtime-main.cc75d0cd.js.map",
     "static/css/2.f2512455.chunk.css": "/ledmebe/static/css/2.f2512455.chunk.css",
@@ -22,6 +22,6 @@
     "static/css/2.f2512455.chunk.css",
     "static/js/2.4493e253.chunk.js",
     "static/css/main.a8a92648.chunk.css",
-    "static/js/main.410a1a9d.chunk.js"
+    "static/js/main.428d340d.chunk.js"
   ]
 }
