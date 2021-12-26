@@ -7,3 +7,8 @@
     align-items: center;
     align-content: space-around;
 }
+@media (max-width: 600px){
+    .detail-products{
+        margin: 0% !important;
+    }
+}

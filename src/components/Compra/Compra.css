@@ -2,3 +2,11 @@
     margin: 2em;
     
 }
+@media (max-width: 600px){
+    .alert-compraID{
+        font-size: 1em;
+    }
+    .alert-danger{
+        font-size: 1em;
+    }
+}

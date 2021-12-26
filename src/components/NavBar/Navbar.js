@@ -6,7 +6,7 @@ import Logo from '../assets/Logo.jpg'
 import './navbar.css'
 function NavBar() {
   return (
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="light" expand="lg" >
         <Container>
           <Navbar.Brand>
             <NavLink className = 'link' to='/'><img className = 'logo' src={Logo} alt='logo'/></NavLink>
@@ -20,16 +20,16 @@ function NavBar() {
               <Nav.Link as={NavLink} className='link' to='/productos'>
                  Productos
               </Nav.Link>                                
-              <NavDropdown title="Categorias" id="basic-nav-dropdown">
+              <NavDropdown title="Categorias" id="basic-nav-dropdown" className='link'>
               <NavDropdown.Item>
-               <NavLink className='link' to='/category/RGB'>RGB</NavLink>
+               <NavLink className='link-sub' to='/category/RGB'>RGB</NavLink>
               </NavDropdown.Item>     
               <NavDropdown.Item>
-               <NavLink className='link' to='/category/Cálida'>Cálidas</NavLink>
+               <NavLink className='link-sub' to='/category/Cálida'>Cálidas</NavLink>
               </NavDropdown.Item>     
                 <NavDropdown.Divider />
                 <NavDropdown.Item>
-               <NavLink className='link' to='/cart'>Cart</NavLink>
+               <NavLink className='link-sub' to='/cart'>Cart</NavLink>
               </NavDropdown.Item>     
               </NavDropdown>
               <CartWidget />

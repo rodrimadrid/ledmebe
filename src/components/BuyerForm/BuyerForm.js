@@ -34,10 +34,10 @@ const BuyerForm = ({ handleChange, handleBuy, handleSetAlert, handleCheckEmail }
     setValidated(true);
   };
   return (
-    <div className='m-5'>
+    <div className='m-3'>
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <Row className="mb-3">
-          <Form.Group as={Col} controlId="formGridName">
+          <Form.Group as={Col} md controlId="formGridName">
             <Form.Label>Nombre</Form.Label>
             <Form.Control
               required
@@ -47,7 +47,7 @@ const BuyerForm = ({ handleChange, handleBuy, handleSetAlert, handleCheckEmail }
               name="nombre"
             />
           </Form.Group>
-          <Form.Group as={Col} controlId="formGridApellido">
+          <Form.Group as={Col} md controlId="formGridApellido">
             <Form.Label>Apellido</Form.Label>
             <Form.Control
               required
@@ -59,7 +59,7 @@ const BuyerForm = ({ handleChange, handleBuy, handleSetAlert, handleCheckEmail }
           </Form.Group>
         </Row>
         <Row className="mb-3">
-          <Form.Group as={Col} controlId="formGridEmail">
+          <Form.Group as={Col} md controlId="formGridEmail">
             <Form.Label>Email</Form.Label>
             <Form.Control
               required
@@ -69,7 +69,7 @@ const BuyerForm = ({ handleChange, handleBuy, handleSetAlert, handleCheckEmail }
               onChange={handleChange}
             />
           </Form.Group>
-          <Form.Group as={Col} controlId="formGridEmail2">
+          <Form.Group as={Col} md controlId="formGridEmail2">
             <Form.Label>Repetir email</Form.Label>
             <Form.Control
               required = {!handleCheckEmail()}
@@ -83,7 +83,7 @@ const BuyerForm = ({ handleChange, handleBuy, handleSetAlert, handleCheckEmail }
             Los email deben coincidir.
           </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} controlId="formGridAddress1">
+          <Form.Group as={Col} md  controlId="formGridAddress1">
             <Form.Label>Direccion</Form.Label>
             <Form.Control
               required
@@ -94,12 +94,12 @@ const BuyerForm = ({ handleChange, handleBuy, handleSetAlert, handleCheckEmail }
           </Form.Group>
         </Row>
         <Row className="mb-3">
-          <Form.Group as={Col} controlId="formGridCity">
+          <Form.Group as={Col} md controlId="formGridCity">
             <Form.Label>Localidad</Form.Label>
             <Form.Control required name="localidad" onChange={handleChange} />
           </Form.Group>
 
-          <Form.Group as={Col} controlId="formGridPhone">
+          <Form.Group as={Col} md controlId="formGridPhone">
             <Form.Label>Teléfono</Form.Label>
             <Form.Control
               type="number"

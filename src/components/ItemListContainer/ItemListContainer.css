@@ -16,5 +16,6 @@
     align-content: space-around;
 }
 .header{
-    background-image: url('../assets/sillon.jpg')
+    background-image: url('../assets/sillon.jpg');
+    font-family: 'Roboto Slab', serif;
 }

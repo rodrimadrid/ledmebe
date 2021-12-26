@@ -1,3 +1,4 @@
+
 .widget-box{
     display: flex;
     flex-wrap: nowrap;
@@ -22,11 +23,13 @@
     justify-content: space-evenly;
     margin: 5%;
     flex-wrap: wrap;
+    
 }
 .styles{
     height: 2em;
     width: 100%;
     font-size: 1.7em;
+
 }
 .arrowStyles{
     width: 1.5em;
@@ -37,4 +40,13 @@
 .cart{
     display: flex;
     flex-direction: column;
+    font-family: 'Roboto Slab', serif;
+}
+@media (max-width: 600px){
+    .cart{
+        margin-top: 5em;
+    }
+    .cart-title{
+        margin: 0;
+    }
 }

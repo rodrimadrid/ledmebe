@@ -13,7 +13,7 @@ const Cart = () => {
     <div className="cart">
       <Link to={`/productos`} className="styles">
         <FiArrowLeft className="arrowStyles" />
-        <span>Elegí tus lámparas!</span>
+        <span className='cart-title'>Elegí tus lámparas!</span>
       </Link>
       <div className="containerStyles">
         {!cart.length && <h1>No agregaste productos</h1>}
